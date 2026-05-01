@@ -16,11 +16,7 @@ phoneToggle.addEventListener("click", function () {
   setActiveToggle(phoneToggle, emailToggle, "Please enter your phone number");
 });
 
-function togglePassword(targetId) {
-  const pass = document.getElementById(targetId);
-  if (!pass) return;
-  pass.type = pass.type === "password" ? "text" : "password";
-}
+
 
 document.querySelectorAll(".toggle-pass").forEach(function (button) {
   button.addEventListener("click", function () {
